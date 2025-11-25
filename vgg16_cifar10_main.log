@@ -1,0 +1,8 @@
+2025-11-21 14:25:54,610:INFO:Epoch 1, client_count 5, Algo: FedRP: train_accuracy=51.9560, val_accuracy=59.1700, train_loss=0.0214, val_loss=0.0744
+2025-11-21 14:32:45,779:INFO:Epoch 2, client_count 5, Algo: FedRP: train_accuracy=68.3120, val_accuracy=64.5100, train_loss=0.0144, val_loss=0.0652
+2025-11-21 14:40:17,963:INFO:Epoch 3, client_count 5, Algo: FedRP: train_accuracy=73.0640, val_accuracy=54.4500, train_loss=0.0123, val_loss=0.0965
+2025-11-21 14:45:55,062:INFO:Epoch 4, client_count 5, Algo: FedRP: train_accuracy=76.1380, val_accuracy=71.3700, train_loss=0.0110, val_loss=0.0552
+2025-11-21 14:51:39,279:INFO:Epoch 5, client_count 5, Algo: FedRP: train_accuracy=77.8320, val_accuracy=76.4600, train_loss=0.0102, val_loss=0.0437
+2025-11-21 14:57:09,890:INFO:Epoch 6, client_count 5, Algo: FedRP: train_accuracy=79.3200, val_accuracy=74.5200, train_loss=0.0096, val_loss=0.0499
+2025-11-21 15:04:32,988:INFO:Epoch 7, client_count 5, Algo: FedRP: train_accuracy=80.5020, val_accuracy=78.5900, train_loss=0.0091, val_loss=0.0396
+2025-11-21 15:11:49,877:INFO:Epoch 8, client_count 5, Algo: FedRP: train_accuracy=81.2880, val_accuracy=77.2900, train_loss=0.0087, val_loss=0.0442

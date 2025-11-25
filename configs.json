@@ -1,0 +1,131 @@
+{
+  "experiment_configs": {
+    "quick_test": {
+      "description": "快速测试配置 - 用于验证代码",
+      "batch_size": 64,
+      "test_batch_size": 16,
+      "epochs": 10,
+      "lr": 0.1,
+      "client_count": 5,
+      "E": 1,
+      "alpha": 1.0,
+      "rp_dim_min": 10,
+      "rp_dim_max": 200,
+      "rp_growth_rate": 10,
+      "adaptive_threshold_high": 0.5,
+      "adaptive_threshold_low": 0.1,
+      "adaptive_increment": 30,
+      "adaptive_decrement": 10
+    },
+    
+    "default": {
+      "description": "默认配置 - 论文实验使用",
+      "batch_size": 64,
+      "test_batch_size": 16,
+      "epochs": 30,
+      "lr": 0.1,
+      "client_count": 10,
+      "E": 1,
+      "alpha": 1.0,
+      "rp_dim_min": 10,
+      "rp_dim_max": 1000,
+      "rp_growth_rate": 5,
+      "adaptive_threshold_high": 0.5,
+      "adaptive_threshold_low": 0.1,
+      "adaptive_increment": 50,
+      "adaptive_decrement": 20
+    },
+    
+    "high_communication": {
+      "description": "通信效率优先 - 更激进的降低通信成本",
+      "batch_size": 64,
+      "test_batch_size": 16,
+      "epochs": 30,
+      "lr": 0.1,
+      "client_count": 10,
+      "E": 1,
+      "alpha": 1.0,
+      "rp_dim_min": 5,
+      "rp_dim_max": 500,
+      "rp_growth_rate": 3,
+      "adaptive_threshold_high": 0.7,
+      "adaptive_threshold_low": 0.05,
+      "adaptive_increment": 30,
+      "adaptive_decrement": 30
+    },
+    
+    "high_accuracy": {
+      "description": "精度优先 - 更快增长到大维度",
+      "batch_size": 64,
+      "test_batch_size": 16,
+      "epochs": 30,
+      "lr": 0.1,
+      "client_count": 10,
+      "E": 1,
+      "alpha": 1.0,
+      "rp_dim_min": 50,
+      "rp_dim_max": 2000,
+      "rp_growth_rate": 10,
+      "adaptive_threshold_high": 0.3,
+      "adaptive_threshold_low": 0.15,
+      "adaptive_increment": 100,
+      "adaptive_decrement": 10
+    },
+    
+    "non_iid_robust": {
+      "description": "Non-IID场景优化",
+      "batch_size": 64,
+      "test_batch_size": 16,
+      "epochs": 40,
+      "lr": 0.05,
+      "client_count": 10,
+      "E": 2,
+      "alpha": 2.0,
+      "rp_dim_min": 20,
+      "rp_dim_max": 1500,
+      "rp_growth_rate": 8,
+      "adaptive_threshold_high": 0.6,
+      "adaptive_threshold_low": 0.08,
+      "adaptive_increment": 60,
+      "adaptive_decrement": 15
+    },
+    
+    "large_scale": {
+      "description": "大规模场景 - 更多客户端",
+      "batch_size": 64,
+      "test_batch_size": 16,
+      "epochs": 50,
+      "lr": 0.1,
+      "client_count": 20,
+      "E": 1,
+      "alpha": 1.0,
+      "rp_dim_min": 10,
+      "rp_dim_max": 1000,
+      "rp_growth_rate": 5,
+      "adaptive_threshold_high": 0.5,
+      "adaptive_threshold_low": 0.1,
+      "adaptive_increment": 50,
+      "adaptive_decrement": 20
+    }
+  },
+  
+  "notes": {
+    "parameter_explanations": {
+      "batch_size": "训练批次大小,影响内存使用和训练稳定性",
+      "epochs": "联邦学习通信轮数,越大精度越高但时间越长",
+      "lr": "学习率,Non-IID场景可适当降低",
+      "client_count": "参与训练的客户端数量",
+      "E": "每轮本地训练的epoch数,Non-IID场景可增大",
+      "alpha": "ADMM惩罚参数,影响收敛速度",
+      "rp_dim_min": "初始投影维度,越小通信成本越低",
+      "rp_dim_max": "最大投影维度,越大最终精度越高",
+      "rp_growth_rate": "线性增长率,控制维度增长速度",
+      "adaptive_threshold_low": "收敛阈值,低于此值增大维度",
+      "adaptive_threshold_high": "发散阈值,高于此值减小维度",
+      "adaptive_increment": "维度增加步长",
+      "adaptive_decrement": "维度减少步长"
+    },
+    
+    "usage": "将配置导入到resnet18_dynamic.py的Arguments类中使用"
+  }
+}
